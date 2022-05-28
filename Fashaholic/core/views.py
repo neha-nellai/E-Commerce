@@ -97,33 +97,19 @@ class HomeView(ListView):
         popular_list = list(df['id'][:4])
         context['popular_rec'] = Item.objects.filter(pk__in=popular_list)
 
-        #Get item-likes M2M field in a table
-
-        #print(df)
-        #print(user_itemList)
-                #print(user.id)
-            #likedproduct = Item.objects.get(slug = id)
-            #product_likes = likedproduct.likes.all()
-            #print("id, likes = ",id,product_likes)
-
-
         #User-User collaborative filtering based recommendation
         if self.request.user.is_authenticated:
             # Get the current user info
             current_user = self.request.user
-            # Get the likes table using connection established with DB
-            #query = dat.execute("SELECT * From core_item_likes")
-            #cols = [column[0] for column in query.description]
-            #df = pd.DataFrame.from_records(data = query.fetchall(), columns = cols)
-            # Check if user has liked any item
+            #Get list of users
             User = get_user_model()
-
+            
+            #Get item-likes M2M field in a table
             df = df.loc[df['likes_count']>0]
             user_itemList = []
             for id in df['id']:
                 likedusers = User.objects.filter(item__id=id)
-                #likedusers = allusers.objects.filter(user__id=id)
-                #print(likedusers)
+       
                 for user in likedusers:
                     user_itemTuple = (id,user.id)
                     user_itemList.append(user_itemTuple)
