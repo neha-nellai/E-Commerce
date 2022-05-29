@@ -55,7 +55,7 @@ Recommendation algorithms
   The recommendations for you section is displayed only when the user is logged in to show personalised recommendations to the user. It makes use of user      collaborative filtering method - which is based on the premise that similar users have similar preferences. It identifies similar users based on products    they have liked, therefore this section starts showing relevant recommendations only after a user has liked a product that has already been previously       liked by some other user
 
 + Trending Products:
-  This is a weighted recommendation system based on user clicks. Positive weights are given for user actions like viewing a product, liking a product, adding to     cart and placing an order and negative weights for  unliking a product, removing a product from cart and requesting refund. Product with highest   weights are    sorted and shown in the trending products section. These recommendations will dynamically change depending on the users actions on the     website.
+  This is a weighted recommendation system based on user clicks. Positive weights are given for user actions like viewing a product, liking a product, adding to     cart and placing an order and negative weights for  disliking a product, removing a product from cart and requesting refund. Product with highest   weights are    sorted and shown in the trending products section. These recommendations will dynamically change depending on the users actions on the     website.
 
 + Popular Products:
   This utilises python's Tim sort which is a hybrid of merge and insertion sort. It sorts the products in descending order of maximum likes and the top 4     most liked product are displayed in this section.
