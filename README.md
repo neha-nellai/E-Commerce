@@ -5,7 +5,7 @@ This is my submission for Microsoft Engage programme 2022.  I have built an E-Co
 Directory Layout
 =================
 
-Django E-commerce Website App's directory structure looks as follows::
+E-commerce Website App's directory structure looks as follows::
 
     E-commerce/
         |---requirements.txt
@@ -51,16 +51,16 @@ So after successful completion of these you are ready to run the application by 
 Recommendation algorithms
 ==========================
 
-+ Recommendations for You section
++ Recommendations for You section:
   The recommendations for you section is displayed only when the user is logged in to show personalised recommendations to the user. It makes use of user      collaborative filtering method - which is based on the premise that similar users have similar preferences. It identifies similar users based on products    they have liked, therefore this section starts showing relevant recommendations only after a user has liked a product that has already been previously       liked by some other user
 
-+ Trending Products
++ Trending Products:
   This is a weighted recommendation system based on user clicks. Positive weights are given for user actions like viewing a product, liking a product, adding to     cart and placing an order and negative weights for  unliking a product, removing a product from cart and requesting refund. Product with highest   weights are    sorted and shown in the trending products section. These recommendations will dynamically change depending on the users actions on the     website.
 
-+ Popular Products
++ Popular Products:
   This utilises python's Tim sort which is a hybrid of merge and insertion sort. It sorts the products in descending order of maximum likes and the top 4     most liked product are displayed in this section.
 
-+ Similar Products section
++ Similar Products section:
   The similar products section on item detail view page displays products similar to the product currently being viewed by the user. I have made use of an     NLP library to extract keywords from the product description to get a bag of words, which are then compared to find similar products. 
 
 
@@ -72,10 +72,12 @@ Website Features
 + Adding & Removing Items From/To The Cart
 + Add Likes To Product
 + Cart Management
-+ Applying Coupons to get discount
-+ Checkout and Payment 
-+ Order History
-+ Request Refund
 + Customized Default Django Admin Dashboard
++ Recommendation algorithms - Content based and Collaborative Filtering
 
-* I used a free template from mdbootstrap. I also used the Flipkart E-Commerce dataset from Kaggle and preprocessed the data using Microsoft Excel. I then imported the data from Excel into my Sqlite database to populate the product details.
+Note
+=====
+
++ Related resources (Agile Sprint Plan, User Stories and Approach, Tech Stack) available on my google drive: https://drive.google.com/drive/folders/1cI5w2RnU2NWvkSoitYN8mCTSnyEHq-Gj
+
++ I used a free E-Commerce template from mdbootstrap. I also used the Flipkart E-Commerce dataset from Kaggle and preprocessed the data using Microsoft Excel. I then imported the data from Excel into my Sqlite database to populate the product details.
